@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardHeader,
 } from "@/components/ui/card";
-import DiscordIcon from "@/public/icons/discord.svg";
+import DiscordIcon from "@/components/ui/discord-icon";
 import Image from "next/image";
 
 export default function Page() {

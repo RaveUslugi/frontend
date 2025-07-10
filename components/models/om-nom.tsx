@@ -19,6 +19,7 @@ export default function OmNomModel() {
         <OrbitControls
           minPolarAngle={Math.PI / 2}
           maxPolarAngle={Math.PI / 2}
+          enableZoom={false}
         />
       </Canvas>
     </div>
