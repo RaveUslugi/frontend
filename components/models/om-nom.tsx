@@ -1,11 +1,21 @@
 "use client";
 
 import { Environment, OrbitControls, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import { Object3D } from "three";
 
 function Model() {
   const gltf = useGLTF("/models/om-nom.glb");
-  return <primitive object={gltf.scene} scale={3.45} />;
+  const ref = useRef<Object3D>(null);
+
+  useFrame(() => {
+    if (ref.current) {
+      ref.current.rotation.y += 0.005;
+    }
+  });
+
+  return <primitive ref={ref} object={gltf.scene} scale={3.45} />;
 }
 
 export default function OmNomModel() {
